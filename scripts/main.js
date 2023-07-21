@@ -16,3 +16,14 @@ d3.cachedJson = function(url, key, callback) {
     });
 	}
 }
+
+
+
+var chartFunc = charts['chart1'];
+    chartFunc();
+
+chartFunc = charts['chart2'];
+    chartFunc();
+
+chartFunc = charts['chart3'];
+    chartFunc();
