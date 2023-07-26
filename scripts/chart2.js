@@ -89,11 +89,11 @@ const svg = d3.select('#svg2')
 
 
 const svginput = d3.select("#svg2").selectAll('input').data(params).enter().append("input")
-  .attr("type", "checkbox")
-  .attr("checked", "checked")
-  .attr("onClick", "updateChart3Data()")
-  .attr("id", function(d){return d;})
-  .attr("value", function(d){return d;})
+  .attr('type', 'checkbox')
+  .attr('checked', 'checked')
+  .attr('onClick"', 'updateChart3Data()')
+  .attr('id', function(d){return d.id;})
+  .attr('value', function(d){return d.id;})
 
 
 
