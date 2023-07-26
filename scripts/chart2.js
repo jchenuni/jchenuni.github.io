@@ -53,7 +53,7 @@ function drawChart2(data) {
   const x = d3.scaleBand()
       .range([0, widthChart2])
       .domain(data.map(function (d) {
-        return d.state;
+        return d.State;
       }))
       .padding(0.2);
   svg.append("g")
