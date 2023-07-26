@@ -22,10 +22,6 @@ function getAndDrawData() {
   // get data
   const file = 'data/company_state_data.csv';
   d3.csv(file,  function(data) {
-    data.forEach(function(d) {
-      d.state = parseString(d.State);
-    });
-    data = data.filter(d => d.state != null);
 
     params.forEach(function(param) {
       if (!d3.select('#' + param.id).property('checked')) {
