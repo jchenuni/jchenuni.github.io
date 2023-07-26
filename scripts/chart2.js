@@ -88,18 +88,6 @@ const svg = d3.select('#svg2')
 
 
 
-const svginput = d3.select("#svg2").selectAll('input').data(params).enter().append("input")
-  .attr('type', 'checkbox')
-  .attr('checked', 'checked')
-  .attr('onClick', 'updateChart3Data()')
-  .attr('id', function(d){return d.id.replace(/\s/g,'').replace('&','');})
-
-
-const svginput = d3.select("#svg2").selectAll('input').data(params).enter().append("label")
-  .attr('value', function(d){return d.id;})
-  
-
-
 charts.chart2 = function() {
   getAndDrawData();
 }
