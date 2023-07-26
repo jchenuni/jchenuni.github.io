@@ -18,11 +18,10 @@ charts.chart2 = function() {
 }
 
 function getAndDrawData() {
-  const parseDateTime = d3.timeParse("%B %d, %Y");
 
   // get data
   const file = 'data/company_state_data.csv';
-  d3.csv(file, 'chart2', function(data) {
+  d3.csv(file,  function(data) {
     data.forEach(function(d) {
       d.state = parseString(d.State);
     });
