@@ -21,7 +21,7 @@ function getDataAndDraw() {
 
     // get data
     const file = 'data/NetflixOriginals.json';
-    d3.cachedJson(file, 'chart1', function(data) {
+    d3.cachedJson(file, 'chart3', function(data) {
         data.forEach(function(d) {
             d.date = parseDateTime(d.Premiere);
         });

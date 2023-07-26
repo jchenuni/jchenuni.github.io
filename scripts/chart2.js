@@ -22,9 +22,9 @@ function getAndDrawData() {
 
   // get data
   const file = 'data/company_state_data.csv';
-  d3.csv(file, 'chart1', function(data) {
+  d3.csv(file, 'chart2', function(data) {
     data.forEach(function(d) {
-      d.state = parseDateTime(d.State);
+      d.state = parseString(d.State);
     });
     data = data.filter(d => d.state != null);
 
