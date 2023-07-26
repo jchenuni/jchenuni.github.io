@@ -2,8 +2,8 @@ var finalDataChart2 = [];
 
 // initialise layout variables
 const marginChart2 = {top: 50, right: 20, bottom: 50, left: 60};
-const widthChart2 = 600;
-const heightChart2 = 400;
+const widthChart2 = 800;
+const heightChart2 = 600;
 
 // initialise charts
 const svg = d3.select('#svg2')
@@ -39,7 +39,7 @@ function getAndDrawData() {
             Count: sumScores
           };
         }
-    );
+    ).sort((a, b) => (a.Count > b.Count) ? 1 : -1);
 
     drawChart2(finalDataChart2);
   });
