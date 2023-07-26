@@ -110,7 +110,7 @@ function getAndDrawData() {
 
     params.forEach(function(param) {
       if (!d3.select('#' + param.id).property('checked')) {
-        data = data.filter(d => d['Industry'] != param.id);
+        data = data.filter(d => d['Industry'].replace(/\s/g,'') != param.id);
       }
     });
 
