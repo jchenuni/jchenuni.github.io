@@ -24,7 +24,7 @@ function getAndDrawData() {
   d3.csv(file,  function(data) {
 
 
-    industryNames = new Set();
+    const industryNames = new Set();
     data.map(function(item){
       industryNames.add(item['Industry']);
     })
