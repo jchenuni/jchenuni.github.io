@@ -137,61 +137,73 @@ function drawChart2(data) {
 
 const params = [
   {
-    id: "Action",
+    id: "Health",
   },
   {
-    id: "Adventure",
+    id: "Manufacturing",
   },
   {
-    id: "Animation",
+    id: "Education",
   },
   {
-    id: "Anime",
+    id: "Retail",
   },
   {
-    id: "Christmas",
+    id: "Telecommunications",
   },
   {
-    id: "Comedy",
+    id: "Food & Beverage",
   },
   {
-    id: "Crime",
+    id: "IT Services",
   },
   {
-    id: "Documentary",
+    id: "Advertising & Marketing",
   },
   {
-    id: "Drama",
+    id: "Computer Hardware",
   },
   {
-    id: "Fantasy",
+    id: "Business Products & Services",
   },
   {
-    id: "Family",
+    id: "Logistics & Transportation",
   },
   {
-    id: "Musical",
+    id: "Government Services",
   },
   {
-    id: "Mystery",
+    id: "Human Resources",
   },
   {
-    id: "Other",
+    id: "Financial Services",
   },
   {
-    id: "Romance",
+    id: "Real Estate",
   },
   {
-    id: "Science-Fiction",
+    id: "Software",
   },
   {
-    id: "Sports-film",
+    id: "Insurance",
   },
   {
-    id: "War",
+    id: "Travel & Hospitality",
   },
   {
-    id: "Western",
+    id: "Environmental Services",
+  },
+  {
+    id: "Consumer Products & Services",
+  },
+  {
+    id: "Security",
+  },
+  {
+    id: "Construction",
+  },
+  {
+    id: "Media",
   },
 ];
 
