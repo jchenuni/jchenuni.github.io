@@ -1,3 +1,75 @@
+const params = [
+  {
+    id: "Health",
+  },
+  {
+    id: "Manufacturing",
+  },
+  {
+    id: "Education",
+  },
+  {
+    id: "Retail",
+  },
+  {
+    id: "Telecommunications",
+  },
+  {
+    id: "Food & Beverage",
+  },
+  {
+    id: "IT Services",
+  },
+  {
+    id: "Advertising & Marketing",
+  },
+  {
+    id: "Computer Hardware",
+  },
+  {
+    id: "Business Products & Services",
+  },
+  {
+    id: "Logistics & Transportation",
+  },
+  {
+    id: "Government Services",
+  },
+  {
+    id: "Human Resources",
+  },
+  {
+    id: "Financial Services",
+  },
+  {
+    id: "Real Estate",
+  },
+  {
+    id: "Software",
+  },
+  {
+    id: "Insurance",
+  },
+  {
+    id: "Travel & Hospitality",
+  },
+  {
+    id: "Environmental Services",
+  },
+  {
+    id: "Consumer Products & Services",
+  },
+  {
+    id: "Security",
+  },
+  {
+    id: "Construction",
+  },
+  {
+    id: "Media",
+  },
+];
+
 var finalDataChart2 = [];
 
 // initialise layout variables
@@ -139,77 +211,7 @@ function drawChart2(data) {
   }
 }
 
-const params = [
-  {
-    id: "Health",
-  },
-  {
-    id: "Manufacturing",
-  },
-  {
-    id: "Education",
-  },
-  {
-    id: "Retail",
-  },
-  {
-    id: "Telecommunications",
-  },
-  {
-    id: "Food & Beverage",
-  },
-  {
-    id: "IT Services",
-  },
-  {
-    id: "Advertising & Marketing",
-  },
-  {
-    id: "Computer Hardware",
-  },
-  {
-    id: "Business Products & Services",
-  },
-  {
-    id: "Logistics & Transportation",
-  },
-  {
-    id: "Government Services",
-  },
-  {
-    id: "Human Resources",
-  },
-  {
-    id: "Financial Services",
-  },
-  {
-    id: "Real Estate",
-  },
-  {
-    id: "Software",
-  },
-  {
-    id: "Insurance",
-  },
-  {
-    id: "Travel & Hospitality",
-  },
-  {
-    id: "Environmental Services",
-  },
-  {
-    id: "Consumer Products & Services",
-  },
-  {
-    id: "Security",
-  },
-  {
-    id: "Construction",
-  },
-  {
-    id: "Media",
-  },
-];
+
 
 
 
