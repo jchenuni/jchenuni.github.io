@@ -92,7 +92,7 @@ const svginput = d3.select("#svg2").selectAll('input').data(params).enter().appe
   .attr('type', 'checkbox')
   .attr('checked', 'checked')
   .attr('onClick', 'updateChart3Data()')
-  .attr('id', function(d){return d.id;})
+  .attr('id', function(d){return d.id.replace(/\s/g,'');})
   .attr('value', function(d){return d.id;})
 
 
