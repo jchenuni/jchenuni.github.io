@@ -92,7 +92,7 @@ const svginput = d3.select("#svg2").selectAll('input').data(params).enter().appe
   .attr('type', 'checkbox')
   .attr('checked', 'checked')
   .attr('onClick', 'updateChart3Data()')
-  .attr('id', function(d){return d.id.replace(/\s/g,'').repace('&','');})
+  .attr('id', function(d){return d.id.replace(/\s/g,'').replace('&','');})
   .attr('value', function(d){return d.id;})
 
 
@@ -110,7 +110,7 @@ function getAndDrawData() {
 
     params.forEach(function(param) {
       if (!d3.select('#' + param.id).property('checked')) {
-        data = data.filter(d => d['Industry'].replace(/\s/g,'').repace('&','') != param.id);
+        data = data.filter(d => d['Industry'].replace(/\s/g,'').replace('&','') != param.id);
       }
     });
 
