@@ -24,14 +24,6 @@ function getAndDrawData() {
   d3.csv(file,  function(data) {
 
 
-    const industryNames = new Set();
-    data.map(function(item){
-      industryNames.add(item['Industry']);
-    })
-    console.log(industryNames)
-
-
-
     params.forEach(function(param) {
       if (!d3.select('#' + param.id).property('checked')) {
         data = data.filter(d => d['Industry'] != param.id);
