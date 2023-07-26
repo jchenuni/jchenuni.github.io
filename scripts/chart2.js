@@ -198,6 +198,15 @@ const params = [
   },
 ];
 
+function addCheckBox_chart2() {
+  d3.select("svg2").selectAll('input').data(params).enter().append("input")
+  .attr("type", "checkbox")
+  .attr("checked", "checked")
+  .attr("onClick", "updateChart3Data()")
+  .attr("id", function(d){return d;})
+  .attr("value", function(d){return d;})
+}
+
 function updateChart2Data() {
   getAndDrawData();
 }
