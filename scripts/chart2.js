@@ -23,7 +23,6 @@ function getAndDrawData() {
   const file = 'data/company_state_data.csv';
   d3.csv(file,  function(data) {
 
-
     params.forEach(function(param) {
       if (!d3.select('#' + param.id).property('checked')) {
         data = data.filter(d => d['Industry'] != param.id);
@@ -86,13 +85,13 @@ function drawChart2(data) {
   const annotations = [
     {
       note: {
-        label: "Decline begins"
+        label: "California with 14 companies"
       },
       connector: {
         end: "arrow"
       },
       type: d3.annotationLabel,
-      x: 250,
+      x: 50,
       y: 75,
       dx: 0,
       dy: -25
