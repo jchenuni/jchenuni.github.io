@@ -29,7 +29,7 @@ function getAndDrawData() {
       }
     });
 
-    const dataGroupedByState = Array.from(d3.group(data, d => d.state));
+    const dataGroupedByState = Array.from(d3.group(data, d => d.State));
     finalDataChart2 = dataGroupedByState.map(
         function (item) {
           var sumScores = 0;
