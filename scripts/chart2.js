@@ -73,9 +73,9 @@ const params = [
 var finalDataChart2 = [];
 
 // initialise layout variables
-const marginChart2 = {top: 50, right: 20, bottom: 100, left: 60};
+const marginChart2 = {top: 50, right: 20, bottom: 50, left: 60};
 const widthChart2 = 600;
-const heightChart2 = 500;
+const heightChart2 = 400;
 
 // initialise charts
 const svg = d3.select('#svg2')
