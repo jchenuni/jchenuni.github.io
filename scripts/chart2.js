@@ -73,7 +73,7 @@ const params = [
 var finalDataChart2 = [];
 
 // initialise layout variables
-const marginChart2 = {top: 50, right: 20, bottom: 50, left: 60};
+const marginChart2 = {top: 50, right: 20, bottom: 100, left: 60};
 const widthChart2 = 600;
 const heightChart2 = 400;
 
@@ -187,8 +187,8 @@ function drawChart2(data) {
     }
   ]
 
-  var paramId = ('#' + param.id).replace(/\s/g,'').replace('&','')
-  if (params.some(param => !d3.select(paramId).property('checked'))) {
+
+  if (params.some(param => !d3.select(('#' + param.id).replace(/\s/g,'').replace('&','')).property('checked'))) {
     // remove annotations
     d3.select('#svg-2-annotations').selectAll('*').remove();
     d3.select('#svg-2-annotations').remove();
