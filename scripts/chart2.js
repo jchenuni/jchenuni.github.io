@@ -187,7 +187,8 @@ function drawChart2(data) {
     }
   ]
 
-  if (params.some(param => !d3.select('#' + param.id).property('checked'))) {
+  var paramId = ('#' + param.id).replace(/\s/g,'').replace('&','')
+  if (params.some(param => !d3.select(paramId).property('checked'))) {
     // remove annotations
     d3.select('#svg-2-annotations').selectAll('*').remove();
     d3.select('#svg-2-annotations').remove();
