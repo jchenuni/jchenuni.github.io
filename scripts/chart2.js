@@ -21,30 +21,30 @@ function getAndDrawData() {
   const parseDateTime = d3.timeParse("%B %d, %Y");
 
   // get data
-  const file = 'data/NetflixOriginals.json';
-  d3.cachedJson(file, 'chart1', function(data) {
+  const file = 'data/company_state_data';
+  d3.csv(file, 'chart1', function(data) {
     data.forEach(function(d) {
-      d.date = parseDateTime(d.Premiere);
+      d.state = parseDateTime(d.State);
     });
-    data = data.filter(d => d.date != null);
+    data = data.filter(d => d.state != null);
 
     params.forEach(function(param) {
       if (!d3.select('#' + param.id).property('checked')) {
-        data = data.filter(d => d['Genre'] != param.id);
+        data = data.filter(d => d['Industry'] != param.id);
       }
     });
 
-    const dataGroupedByYear = Array.from(d3.group(data, d => d.date.getFullYear()));
-    finalDataChart2 = dataGroupedByYear.map(
+    const dataGroupedByState = Array.from(d3.group(data, d => d.state));
+    finalDataChart2 = dataGroupedByState.map(
         function (item) {
           var sumScores = 0;
-          item[1].forEach(d => sumScores += d["IMDB Score"]);
+          item[1].forEach(d => sumScores += 1);
           return {
-            year: item[0],
-            averageScore: sumScores / item[1].length
+            State: item[0],
+            Count: sumScores
           };
         }
-    ).sort((a, b) => (a.year > b.year) ? 1 : -1);
+    );
 
     drawChart2(finalDataChart2);
   });
@@ -58,7 +58,7 @@ function drawChart2(data) {
   const x = d3.scaleBand()
       .range([0, widthChart2])
       .domain(data.map(function (d) {
-        return d.year;
+        return d.state;
       }))
       .padding(0.2);
   svg.append("g")
@@ -80,10 +80,10 @@ function drawChart2(data) {
       .data(data)
       .enter()
       .append("rect")
-      .attr("x", function(d) { return x(d.year); })
-      .attr("y", function(d) { return y(d.averageScore); })
+      .attr("x", function(d) { return x(d.State); })
+      .attr("y", function(d) { return y(d.Count); })
       .attr("width", x.bandwidth())
-      .attr("height", function(d) { return heightChart2 - y(d.averageScore); })
+      .attr("height", function(d) { return heightChart2 - y(d.Count); })
       .attr("fill", "#69b3a2")
 
   // Features of the annotation
