@@ -39,7 +39,7 @@ function getAndDrawData() {
             Count: sumScores
           };
         }
-    ).sort((a, b) => (a.Count > b.Count) ? 1 : -1);
+    ).sort((a, b) => (a.Count < b.Count) ? 1 : -1);
 
     drawChart2(finalDataChart2);
   });
@@ -65,7 +65,7 @@ function drawChart2(data) {
 
   // Add Y axis
   const y = d3.scaleLinear()
-      .domain([0, 7])
+      .domain([0, 50])
       .range([heightChart2, 0]);
   svg.append("g")
       .call(d3.axisLeft(y));
