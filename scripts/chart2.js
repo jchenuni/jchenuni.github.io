@@ -109,8 +109,9 @@ function getAndDrawData() {
   d3.csv(file,  function(data) {
 
     params.forEach(function(param) {
-      if (!d3.select('#' + param.id).property('checked')) {
-        data = data.filter(d => d['Industry'].replace(/\s/g,'').replace('&','') != param.id);
+      var paramId = ('#' + param.id).replace(/\s/g,'').replace('&','')
+      if (!d3.select(paramId).property('checked')) {
+        data = data.filter(d => d['Industry'] != param.id);
       }
     });
 
