@@ -35,7 +35,7 @@ function getDataAndDraw() {
             function (item) {
                 return {
                     companyName: item['Company Name'],
-                    yearsOnList: item['Year On List']
+                    yearsOnList: item['Years On List']
                 };
             }
         ).sort((a, b) => (a.yearsOnList < b.yearsOnList) ? 1 : -1);
