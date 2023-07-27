@@ -17,36 +17,28 @@ charts.chart3 = function() {
 }
 
 function getDataAndDraw() {
-    const parseDateTime = d3.timeParse("%B %d, %Y");
 
     // get data
-    const file = 'data/NetflixOriginals.json';
-    d3.cachedJson(file, 'chart3', function(data) {
-        data.forEach(function(d) {
-            d.date = parseDateTime(d.Premiere);
-        });
-        data = data.filter(d => d.date != null);
-        data.forEach(function(d) {
-            d.year = d.date.getFullYear();
-        });
+    const file = 'data/company_longest_strike';
+    d3.csv(file, function(data) {
+
 
         paramsChart3.forEach(function(param) {
-            if (!d3.select(param.id).property('checked')) {
-                data = data.filter(d => d.year != param.year);
+            var paramId = ('#' + param.id).replace(/\s/g,'').replace('&','')
+            if (!d3.select(paramId).property('checked')) {
+                data = data.filter(d => d['Industry'] != param.id);
             }
         });
 
-        const dataGroupedByGenre = Array.from(d3.group(data, d => d["Genre"]));
-        finalDataChart3 = dataGroupedByGenre.map(
+
+        finalDataChart3 = data.map(
             function (item) {
-                var sumScores = 0;
-                item[1].forEach(d => sumScores += d["IMDB Score"]);
                 return {
-                    genre: item[0],
-                    averageScore: sumScores / item[1].length
+                    companyName: item['Company Name'],
+                    yearsOnList: item['Year On List']
                 };
             }
-        ).sort((a, b) => (a.genre > b.genre) ? 1 : -1);
+        ).sort((a, b) => (a.yearsOnList < b.yearsOnList) ? 1 : -1);
 
         drawChart3(finalDataChart3);
     });
@@ -60,7 +52,7 @@ function drawChart3(data) {
     const x = d3.scaleBand()
         .range([0, widthChart3])
         .domain(data.map(function (d) {
-            return d.genre;
+            return d.companyName;
         }))
         .padding(0.2);
     svgChart3.append("g")
@@ -82,46 +74,83 @@ function drawChart3(data) {
         .data(data)
         .enter()
         .append("rect")
-        .attr("x", function(d) { return x(d.genre); })
-        .attr("y", function(d) { return y(d.averageScore); })
+        .attr("x", function(d) { return x(d.companyName); })
+        .attr("y", function(d) { return y(d.yearsOnList); })
         .attr("width", x.bandwidth())
-        .attr("height", function(d) { return heightChart3 - y(d.averageScore); })
+        .attr("height", function(d) { return heightChart3 - y(d.yearsOnList); })
         .attr("fill", "#69b3a2");
 }
 
 const paramsChart3 = [
     {
-        id: "#checkbox-2014",
-        year: 2014
-    },
-    {
-        id: "#checkbox-2015",
-        year: 2015
-    },
-    {
-        id: "#checkbox-2016",
-        year: 2016
-    },
-    {
-        id: "#checkbox-2017",
-        year: 2017
-    },
-    {
-        id: "#checkbox-2018",
-        year: 2018
-    },
-    {
-        id: "#checkbox-2019",
-        year: 2019
-    },
-    {
-        id: "#checkbox-2020",
-        year: 2020
-    },
-    {
-        id: "#checkbox-2021",
-        year: 2021
-    },
+    id: "Health",
+  },
+  {
+    id: "Manufacturing",
+  },
+  {
+    id: "Education",
+  },
+  {
+    id: "Retail",
+  },
+  {
+    id: "Telecommunications",
+  },
+  {
+    id: "Food & Beverage",
+  },
+  {
+    id: "IT Services",
+  },
+  {
+    id: "Advertising & Marketing",
+  },
+  {
+    id: "Computer Hardware",
+  },
+  {
+    id: "Business Products & Services",
+  },
+  {
+    id: "Logistics & Transportation",
+  },
+  {
+    id: "Government Services",
+  },
+  {
+    id: "Human Resources",
+  },
+  {
+    id: "Financial Services",
+  },
+  {
+    id: "Real Estate",
+  },
+  {
+    id: "Software",
+  },
+  {
+    id: "Insurance",
+  },
+  {
+    id: "Travel & Hospitality",
+  },
+  {
+    id: "Environmental Services",
+  },
+  {
+    id: "Consumer Products & Services",
+  },
+  {
+    id: "Security",
+  },
+  {
+    id: "Construction",
+  },
+  {
+    id: "Media",
+  },
 ];
 function updateChart3Data() {
     getDataAndDraw();
