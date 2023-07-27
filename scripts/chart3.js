@@ -38,7 +38,7 @@ function getDataAndDraw() {
                     yearsOnList: item['Years on List']
                 }
             }
-        ).sort((a, b) => (a.yearsOnList < b.yearsOnList) ? 1 : -1);
+        ).sort((a, b) => (+a.yearsOnList < +b.yearsOnList) ? 1 : -1);
 
         drawChart3(finalDataChart3);
     });
