@@ -40,6 +40,10 @@ function getDataAndDraw() {
             }
         ).sort((a, b) => (+a.yearsOnList < +b.yearsOnList) ? 1 : -1);
 
+
+        var l = Math.min(finalDataChart3.length-1, 10);
+        finalDataChart3 = finalDataChart3.slice(0,l);
+
         drawChart3(finalDataChart3);
     });
 }
