@@ -64,7 +64,7 @@ function drawChart3(data) {
 
     // Add Y axis
     const y = d3.scaleLinear()
-        .domain([0, 7])
+        .domain([0, 14])
         .range([heightChart3, 0]);
     svgChart3.append("g")
         .call(d3.axisLeft(y));
