@@ -31,14 +31,7 @@ function getDataAndDraw() {
         });
 
 
-        finalDataChart3 = data.map(
-            function (item) {
-                return {
-                    companyName: item['Company Name'],
-                    yearsOnList: item['Years On List']
-                };
-            }
-        ).sort((a, b) => (a.yearsOnList < b.yearsOnList) ? 1 : -1);
+        finalDataChart3 = data[['Company Name', 'Years On List']].sort((a, b) => (a.yearsOnList < b.yearsOnList) ? 1 : -1);
 
         drawChart3(finalDataChart3);
     });
