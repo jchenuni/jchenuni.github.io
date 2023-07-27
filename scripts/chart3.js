@@ -24,7 +24,7 @@ function getDataAndDraw() {
 
 
         paramsChart3.forEach(function(param) {
-            var paramId = ('#' + param.id).replace(/\s/g,'').replace('&','')
+            var paramId = ('#' + param.id).replace(/\s/g,'').replace('&','').concat('-3');
             if (!d3.select(paramId).property('checked')) {
                 data = data.filter(d => d['Industry'] != param.id);
             }
