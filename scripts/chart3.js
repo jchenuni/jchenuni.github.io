@@ -19,7 +19,7 @@ charts.chart3 = function() {
 function getDataAndDraw() {
 
     // get data
-    const file = 'data/company_longest_strike';
+    const file = 'data/company_longest_strike.csv';
     d3.csv(file, function(data) {
 
 
