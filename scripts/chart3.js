@@ -34,7 +34,7 @@ function getDataAndDraw() {
         finalDataChart3 = data.map(
             function(item) {
                 return {
-                    CompanyName: item['Company Name'],
+                    companyName: item['Company Name'],
                     yearsOnList: item['Years on List']
                 }
             }
