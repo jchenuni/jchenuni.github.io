@@ -49,7 +49,9 @@ charts.chart1 = function() {
         .style("text-anchor", "end");
 
     // Add Y axis
-    const y = d3.scaleLog([0, 10], [height, 0]);
+    const y = d3.scaleLinear()
+        .domain([0, "5011166514"])
+        .range([height, 0]);
     svg.append("g")
         .call(d3.axisLeft(y));
 
@@ -61,7 +63,7 @@ charts.chart1 = function() {
         .attr("x", function(d) { return x(d.companyName); })
         .attr("y", function(d) { return y(+d.revenue); })
         .attr("width", x.bandwidth())
-        .attr("height", function(d) { return y(+d.revenue); })
+        .attr("height", function(d) { return height - y(+d.revenue); })
         .attr("fill", "#69b3a2")
 
     // Features of the annotation
