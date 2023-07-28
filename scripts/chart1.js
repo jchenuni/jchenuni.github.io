@@ -61,7 +61,7 @@ charts.chart1 = function() {
         .attr("x", function(d) { return x(d.companyName); })
         .attr("y", function(d) { return y(+d.revenue); })
         .attr("width", x.bandwidth())
-        .attr("height", function(d) { return height - y(+d.revenue); })
+        .attr("height", function(d) { return y(+d.revenue); })
         .attr("fill", "#69b3a2")
 
     // Features of the annotation
