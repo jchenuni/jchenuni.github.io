@@ -18,7 +18,7 @@ charts.chart1 = function() {
   d3.csv(file, function(data) {
 
 
-    const finalData = data.map(
+    finalData = data.map(
         function (item) {
           return {
             companyName: item['Company Name'],
