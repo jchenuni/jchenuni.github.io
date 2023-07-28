@@ -22,10 +22,10 @@ charts.chart1 = function() {
       function (item) {
         return {
           companyName: item['Company Name'],
-          revenue: item['Revenue ($)']
+          revenue: +item['Revenue ($)']/1000000
         };
       }
-    ).sort((a, b) => (+a.revenue < +b.revenue) ? 1 : -1);
+    ).sort((a, b) => (a.revenue < b.revenue) ? 1 : -1);
 
     var l = Math.min(finalData.length-1, 10);
     finalData = finalData.slice(0,l);
@@ -50,7 +50,7 @@ charts.chart1 = function() {
 
     // Add Y axis
     const y = d3.scaleLinear()
-        .domain([0, "5011166514"])
+        .domain([0, "5000"])
         .range([height, 0]);
     svg.append("g")
         .call(d3.axisLeft(y));
@@ -61,9 +61,9 @@ charts.chart1 = function() {
         .enter()
         .append("rect")
         .attr("x", function(d) { return x(d.companyName); })
-        .attr("y", function(d) { return y(+d.revenue); })
+        .attr("y", function(d) { return y(d.revenue); })
         .attr("width", x.bandwidth())
-        .attr("height", function(d) { return height - y(+d.revenue); })
+        .attr("height", function(d) { return height - y(d.revenue); })
         .attr("fill", "#69b3a2")
 
     // Features of the annotation
