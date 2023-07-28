@@ -19,12 +19,12 @@ charts.chart1 = function() {
 
 
     finalData = data.map(
-        function (item) {
-          return {
-            companyName: item['Company Name'],
-            revenue: item['Revenue ($)']
-          };
-        }
+      function (item) {
+        return {
+          companyName: item['Company Name'],
+          revenue: item['Revenue ($)']
+        };
+      }
     ).sort((a, b) => (+a.revenue < +b.revenue) ? 1 : -1);
 
     var l = Math.min(finalData.length-1, 10);
@@ -61,9 +61,9 @@ charts.chart1 = function() {
         .enter()
         .append("rect")
         .attr("x", function(d) { return x(d.companyName); })
-        .attr("y", function(d) { return y(d.revenue); })
+        .attr("y", function(d) { return y(+d.revenue); })
         .attr("width", x.bandwidth())
-        .attr("height", function(d) { return height - y(d.revenue); })
+        .attr("height", function(d) { return height - y(+d.revenue); })
         .attr("fill", "#69b3a2")
 
     // Features of the annotation
