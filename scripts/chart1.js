@@ -49,9 +49,7 @@ charts.chart1 = function() {
         .style("text-anchor", "end");
 
     // Add Y axis
-    const y = d3.scaleLog()
-        .domain([0, 10])
-        .range([height, 0]);
+    const y = d3.scaleLog([10, 0], [height, 0]);
     svg.append("g")
         .call(d3.axisLeft(y));
 
