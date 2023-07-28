@@ -14,21 +14,21 @@ charts.chart1 = function() {
       .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
   // get data
-  const file = 'data/NetflixOriginals.json';
-  d3.cachedJson(file, 'chart1', function(data) {
-    data.forEach(function(d) {
-      d.date = parseDateTime(d.Premiere);
-    });
-    data = data.filter(d => d.date != null);
-    const dataGroupedByYear = Array.from(d3.group(data, d => d.date.getFullYear()));
-    const finalData = dataGroupedByYear.map(
+  const file = 'data/company_revenue.csv';
+  d3.csv(file, function(data) {
+
+
+    const finalData = data.map(
         function (item) {
           return {
-            year: item[0],
-            numOriginals: item[1].length
+            companyName: item['Company Name'],
+            revenue: item['Revenue ($)']
           };
         }
-    ).sort((a, b) => (a.year > b.year) ? 1 : -1);
+    ).sort((a, b) => (+a.revenue < +b.revenue) ? 1 : -1);
+
+    var l = Math.min(finalData.length-1, 10);
+    finalData = finalData.slice(0,l);
 
     draw(finalData);
   });
@@ -38,7 +38,7 @@ charts.chart1 = function() {
     const x = d3.scaleBand()
         .range([0, width])
         .domain(data.map(function (d) {
-          return d.year;
+          return d.companyName;
         }))
         .padding(0.2);
     svg.append("g")
@@ -60,10 +60,10 @@ charts.chart1 = function() {
         .data(data)
         .enter()
         .append("rect")
-        .attr("x", function(d) { return x(d.year); })
-        .attr("y", function(d) { return y(d.numOriginals); })
+        .attr("x", function(d) { return x(d.companyName); })
+        .attr("y", function(d) { return y(d.revenue); })
         .attr("width", x.bandwidth())
-        .attr("height", function(d) { return height - y(d.numOriginals); })
+        .attr("height", function(d) { return height - y(d.revenue); })
         .attr("fill", "#69b3a2")
 
     // Features of the annotation
