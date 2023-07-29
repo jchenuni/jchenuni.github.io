@@ -77,7 +77,7 @@ charts.chart1 = function() {
         },
         type: d3.annotationLabel,
         x: 100,
-        y: 50,
+        y: 60,
         dx: 0,
         dy: -25
       },
