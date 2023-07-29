@@ -167,21 +167,21 @@ function drawChart2(data) {
         end: "arrow"
       },
       type: d3.annotationLabel,
-      x: 50,
+      x: 60,
       y: 75,
       dx: 0,
       dy: -25
     },
     {
       note: {
-        label: "Worst scores since 2014"
+        label: "Virginia with 5 companies"
       },
       connector: {
         end: "arrow"
       },
       type: d3.annotationLabel,
-      x: 615,
-      y: 100,
+      x: 75,
+      y: 75,
       dx: 0,
       dy: -25
     }
