@@ -70,7 +70,7 @@ charts.chart1 = function() {
     const annotations = [
       {
         note: {
-          label: "ABC Supplier 4911 million"
+          label: "ABC Supply 4911 million"
         },
         connector: {
           end: "arrow"
