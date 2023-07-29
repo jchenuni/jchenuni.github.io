@@ -70,7 +70,7 @@ charts.chart1 = function() {
     const annotations = [
       {
         note: {
-          label: "ABC Supplier at"
+          label: "ABC Supplier at 4911 million"
         },
         connector: {
           end: "arrow"
@@ -83,7 +83,7 @@ charts.chart1 = function() {
       },
       {
         note: {
-          label: "Global Services at"
+          label: "Sutherland Global Services at 771 million"
         },
         connector: {
           end: "arrow"
