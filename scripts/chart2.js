@@ -181,7 +181,7 @@ function drawChart2(data) {
       },
       type: d3.annotationLabel,
       x: 215,
-      y: 250,
+      y: 275,
       dx: 0,
       dy: -25
     }
