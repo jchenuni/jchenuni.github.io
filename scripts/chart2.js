@@ -180,7 +180,7 @@ function drawChart2(data) {
         end: "arrow"
       },
       type: d3.annotationLabel,
-      x: 225,
+      x: 250,
       y: 275,
       dx: 0,
       dy: -25
