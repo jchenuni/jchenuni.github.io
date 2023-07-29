@@ -90,7 +90,7 @@ charts.chart1 = function() {
         },
         type: d3.annotationLabel,
         x: 600,
-        y: 385,
+        y: 285,
         dx: 0,
         dy: -25
       }
