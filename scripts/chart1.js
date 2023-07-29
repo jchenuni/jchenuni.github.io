@@ -70,27 +70,27 @@ charts.chart1 = function() {
     const annotations = [
       {
         note: {
-          label: "Starts producing"
+          label: "ABC Supplier at"
         },
         connector: {
           end: "arrow"
         },
         type: d3.annotationLabel,
-        x: 125,
-        y: 450,
+        x: 100,
+        y: 50,
         dx: 0,
         dy: -25
       },
       {
         note: {
-          label: "Peak so far"
+          label: "Global Services at"
         },
         connector: {
           end: "arrow"
         },
         type: d3.annotationLabel,
-        x: 545,
-        y: 85,
+        x: 600,
+        y: 585,
         dx: 0,
         dy: -25
       }
