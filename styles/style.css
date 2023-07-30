@@ -170,18 +170,7 @@ line.annotation {
   margin: 0 20px;
 }
 
-/* chart 4 */
-.chart4 {
-  width: 502px;
-  height: 502px;
-}
-#svg4 {
-  width: 500px;
-  height: 500px;
-}
-#svg4 rec {
-  opacity: 0.1;
-}
+
 #map {
   position: relative;
   top: -505px;
