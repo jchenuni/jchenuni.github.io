@@ -170,13 +170,3 @@ line.annotation {
   margin: 0 20px;
 }
 
-
-#map {
-  position: relative;
-  top: -505px;
-  width: 500px;
-  height: 500px;
-}
-.panel input[type="button"] {
-  margin: 0 20px;
-}
